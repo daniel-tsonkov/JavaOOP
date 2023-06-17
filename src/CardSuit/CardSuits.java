@@ -1,5 +1,5 @@
 package CardSuit;
 
 public enum CardSuits {
-    CLUBS, DIAMOND, HEARTS, SPADES
+    CLUBS, DIAMONDS, HEARTS, SPADES
 }
