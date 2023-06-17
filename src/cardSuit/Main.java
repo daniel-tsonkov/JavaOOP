@@ -1,4 +1,4 @@
-package com.company;
+package cardSuit;
 
 public class Main {
 
