@@ -1,6 +1,6 @@
 package TrafficLights;
 
-public enum TrafficLight {
+public enum Color {
     RED,
     YELLOW,
     GREEN
