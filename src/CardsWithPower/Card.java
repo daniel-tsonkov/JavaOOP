@@ -1,7 +1,7 @@
 package CardsWithPower;
 
-import CardRanks.CardRanks;
-import CardSuit.CardSuits;
+import CardRanks.CardRanksA;
+import CardSuit.CardSuitsA;
 
 public class Card {
     private CardSuits cardSuits;
@@ -30,7 +30,7 @@ public class Card {
     }
 
     public int getPower() {
-        return power;
+        return this.cardSuits.getSuitPower() + this.cardRanks.getPowerRank();
     }
 
     public void setPower(int power) {
