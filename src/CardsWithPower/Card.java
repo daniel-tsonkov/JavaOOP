@@ -1,8 +1,5 @@
 package CardsWithPower;
 
-import CardRanks.CardRanksA;
-import CardSuit.CardSuitsA;
-
 public class Card {
     private CardSuits cardSuits;
     private CardRanks cardRanks;
