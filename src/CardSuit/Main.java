@@ -10,5 +10,7 @@ public class Main {
         for (CardSuits card : cardSuits) {
             System.out.printf("Ordinal value: %d; Name value: %s\n", card.ordinal(), card);
         }
+
+
     }
 }
