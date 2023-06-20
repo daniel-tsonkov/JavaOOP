@@ -6,7 +6,7 @@ import java.util.List;
 public class Person {
     private String name;
     private double money;
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products;
 
     public Person(String namme, double money) {
         setNamme(name);
@@ -23,10 +23,10 @@ public class Person {
     }
 
     private void setMoney(double money) {
-        if (money > 0) {
+        if (money >= 0) {
             this.money = money;
         } else {
-            System.out.println("Money cannot be negative");
+            throw new IllegalArgumentException("Money cannot be negative");
         }
     }
 
