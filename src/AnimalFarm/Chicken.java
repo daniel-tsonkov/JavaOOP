@@ -35,9 +35,9 @@ public class Chicken {
     }
 
     private double calculateProductPerDay() {
-        if (this.age >= 0 && this.age < 6) {
+        if (this.age >= 0 && this.age <= 5) {
             return 2;
-        } else if (this.age >= 6 && this.age < 11) {
+        } else if (this.age >= 6 && this.age <= 11) {
             return 1;
         } else {
             return 0.75;
