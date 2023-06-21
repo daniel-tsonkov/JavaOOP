@@ -1,5 +1,6 @@
 package PizzaCalories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pizza {
@@ -12,10 +13,10 @@ public class Pizza {
     }
 
     private void setName(String name) {
-        if (name.length() >= 1 && name.length() <= 15) {
+        if (name.trim().length() >= 1 && name.trim().length() <= 15) {
             this.name = name;
         } else {
-            throw  new IllegalArgumentException("Pizza name should be between 1 and 15 symbols.");
+            throw new IllegalArgumentException("Pizza name should be between 1 and 15 symbols.");
         }
     }
 
@@ -25,9 +26,9 @@ public class Pizza {
 
     private void setToppings(int count) {
         if (count >= 0 && count <= 10) {
-            this.toppings = toppings;
+            this.toppings = new ArrayList<>(count);
         } else {
-            throw  new IllegalArgumentException("Number of toppings should be in range [0..10].");
+            throw new IllegalArgumentException("Number of toppings should be in range [0..10].");
         }
     }
 
@@ -36,10 +37,10 @@ public class Pizza {
     }
 
     public void addTopping(Topping topping) {
-
+        this.toppings.add(topping);
     }
 
     public double fetOverallCallories() {
-
+return this.dough.calculateCalories() + this.toppings.stream().mapToDouble(t -> t.calculateCalories()).sum();
     }
 }
