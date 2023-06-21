@@ -8,8 +8,9 @@ public class Pizza {
     private Dough dough;
     private List<Topping> toppings;
 
-    public Pizza(String name, List<Topping> toppings) {
-
+    public Pizza(String name, int count) {
+        setName(name);
+        setToppings(count);
     }
 
     private void setName(String name) {
@@ -41,6 +42,6 @@ public class Pizza {
     }
 
     public double fetOverallCallories() {
-return this.dough.calculateCalories() + this.toppings.stream().mapToDouble(t -> t.calculateCalories()).sum();
+        return this.dough.calculateCalories() + this.toppings.stream().mapToDouble(t -> t.calculateCalories()).sum();
     }
 }
