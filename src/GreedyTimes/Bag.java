@@ -35,4 +35,16 @@ public class Bag {
     public boolean isItemOfItemType(ItemType itemType) {
         return true;
     }
+
+    public void addItem(Item item) {
+        this.items.add(item);
+    }
+
+    public Item getItemByType(ItemType itemType) {
+        return null;
+    }
+
+    void printItems() {
+
+    }
 }
