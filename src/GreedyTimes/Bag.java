@@ -27,4 +27,12 @@ public class Bag {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
+
+    public long getItemTypeAmount(ItemType itemType) {
+        return 0;
+    }
+
+    public boolean isItemOfItemType(ItemType itemType) {
+        return true;
+    }
 }
