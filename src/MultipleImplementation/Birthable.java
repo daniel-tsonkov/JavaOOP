@@ -1,5 +1,5 @@
 package MultipleImplementation;
 
 public interface Birthable {
-    public String getBirthDate();
+    String getBirthDate();
 }

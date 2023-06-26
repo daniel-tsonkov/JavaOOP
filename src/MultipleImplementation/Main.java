@@ -16,8 +16,8 @@ public class Main {
             int age = Integer.parseInt(scanner.nextLine());
             String id = scanner.nextLine();
             String birthDate = scanner.nextLine();
-            Identifiable identifiable = new Citizen(name, age, id, birthDate);
-            Birthable birthable = new Citizen(name, age, id, birthDate);
+            Identifiable identifiable = new Citizen(name,age,id,birthDate);
+            Birthable birthable = new Citizen(name,age,id,birthDate);
             System.out.println(methods.length);
             System.out.println(methods[0].getReturnType().getSimpleName());
             System.out.println(methods1.length);
