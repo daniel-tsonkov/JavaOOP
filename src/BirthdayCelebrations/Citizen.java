@@ -1,8 +1,7 @@
 package BirthdayCelebrations;
 
-public class Citizen implements Person, Birthable, Identifiable {
+public class Citizen implements Birthable, Identifiable {
     private final String name;
-
     private final int age;
     private final String id;
     private final String birthDate;
@@ -15,16 +14,6 @@ public class Citizen implements Person, Birthable, Identifiable {
     }
 
     @Override
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public int getAge() {
-        return this.age;
-    }
-
-    @Override
     public String getBirthDate() {
         return this.birthDate;
     }
@@ -32,5 +21,13 @@ public class Citizen implements Person, Birthable, Identifiable {
     @Override
     public String getId() {
         return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
     }
 }
