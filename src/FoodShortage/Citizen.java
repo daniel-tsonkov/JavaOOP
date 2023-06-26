@@ -1,17 +1,19 @@
 package FoodShortage;
 
-public class Citizen implements Person, Birthable, Identifiable {
+public class Citizen implements Person, Birthable, Identifiable, Buyer {
     private final String name;
 
     private final int age;
     private final String id;
     private final String birthDate;
+    private int food;
 
     public Citizen(String name, int age, String id, String birthDate) {
         this.name = name;
         this.age = age;
         this.id = id;
         this.birthDate = birthDate;
+        this.food = 0;
     }
 
     @Override
@@ -32,5 +34,15 @@ public class Citizen implements Person, Birthable, Identifiable {
     @Override
     public String getId() {
         return this.id;
+    }
+
+    @Override
+    public void buyFood() {
+
+    }
+
+    @Override
+    public int getFood() {
+        return 0;
     }
 }
