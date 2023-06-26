@@ -38,11 +38,11 @@ public class Citizen implements Person, Birthable, Identifiable, Buyer {
 
     @Override
     public void buyFood() {
-
+        this.food += 10;
     }
 
     @Override
     public int getFood() {
-        return 0;
+        return this.food;
     }
 }
