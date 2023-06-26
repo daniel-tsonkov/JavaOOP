@@ -1,7 +1,5 @@
 package MultipleImplementation;
 
-import DefineAnInterfacePerson.Person;
-
 public class Citizen implements Person, Birthable, Identifiable {
     private final String name;
 
