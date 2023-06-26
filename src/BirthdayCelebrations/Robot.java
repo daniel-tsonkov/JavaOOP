@@ -1,7 +1,5 @@
 package BirthdayCelebrations;
 
-import MultipleImplementation.Identifiable;
-
 public class Robot implements Identifiable {
     private final String id;
     private final String model;
