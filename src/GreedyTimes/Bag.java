@@ -1,11 +1,10 @@
 package GreedyTimes;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Bag {
+    private static final Comparator<Item> COMPARE_ITEM_BY_NAME = Comparator.comparing(Item::getItemName);
+    private static final Comparator<Item> COMPARE_ITEM_BY_AMOUNT = Comparator.comparing(Item::getAmount);
     private List<Item> items;
     private long capacity;
 
@@ -72,6 +71,13 @@ public class Bag {
                 this.items.add(itemToAdd);
             }
         }
+    }
+
+    private Item getItemByName(String itemName) {
+        return this.items.stream()
+                .filter(item -> item.getItemName().equals(itemName))
+                .findFirst()
+                .orElse(null);
     }
 
     private boolean canAdd(Item item) {
