@@ -8,13 +8,13 @@ public class Person {
     private double money;
     private List<Product> products;
 
-    public Person(String namme, double money) {
-        setNamme(name);
+    public Person(String name, double money) {
+        setName(this.name);
         setMoney(money);
         this.products = new ArrayList<>();
     }
 
-    private void setNamme(String name) {
+    private void setName(String name) {
         if (!name.trim().isEmpty()) {
             this.name = name;
         } else {

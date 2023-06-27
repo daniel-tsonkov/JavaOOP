@@ -21,7 +21,7 @@ public class Product {
         if (cost >= 0) {
             this.cost = cost;
         } else {
-            throw new IllegalArgumentException("Money cannot be negative");
+            throw new IllegalArgumentException("Cost cannot be negative");
         }
     }
 

@@ -29,13 +29,13 @@ public class Person {
         }
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void buyProduct(Product product) {
         if (product.getCost() > this.money) {
             throw new IllegalArgumentException(this.name + " can't afford " + product.getName());
         }
+    }
+
+    public String getName() {
+        return name;
     }
 }

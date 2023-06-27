@@ -18,12 +18,11 @@ public class Product {
     }
 
     private void setCost(double cost) {
-        if(cost >= 0) {
+        if (cost >= 0) {
             this.cost = cost;
         } else {
             throw new IllegalArgumentException("Cost cannot be negative");
         }
-
     }
 
     public String getName() {
