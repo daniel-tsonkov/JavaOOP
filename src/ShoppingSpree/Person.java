@@ -14,11 +14,19 @@ public class Person {
     }
 
     private void setName(String name) {
-        this.name = name;
+        if (!name.trim().isBlank()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
     }
 
     private void setMoney(double money) {
-        this.money = money;
+        if (money >= 0) {
+            this.money = money;
+        } else {
+            throw new IllegalArgumentException("Money cannot be negative");
+        }
     }
 
     public String getName() {
@@ -26,6 +34,8 @@ public class Person {
     }
 
     public void buyProduct(Product product) {
-
+        if (product.getCost() > this.money) {
+            throw new IllegalArgumentException(this.name + " can't afford " + product.getName());
+        }
     }
 }

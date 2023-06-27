@@ -10,11 +10,20 @@ public class Product {
     }
 
     private void setName(String name) {
-        this.name = name;
+        if(!name.trim().isBlank()){
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Name cannot be empty");
+        }
     }
 
     private void setCost(double cost) {
-        this.cost = cost;
+        if(cost >= 0) {
+            this.cost = cost;
+        } else {
+            throw new IllegalArgumentException("Cost cannot be negative");
+        }
+
     }
 
     public String getName() {
