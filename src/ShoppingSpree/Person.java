@@ -30,8 +30,15 @@ public class Person {
     }
 
     public void buyProduct(Product product) {
-        if (product.getCost() > this.money) {
+        /*if (product.getCost() > this.money) {
             throw new IllegalArgumentException(this.name + " can't afford " + product.getName());
+        }*/
+        if (this.money >= product.getCost()) {
+            this.products.add(product);
+            this.money -= product.getCost();
+        } else {
+            String message = getName() + " can't afford " + product.getName();
+            throw new IllegalArgumentException(message);
         }
     }
 
