@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 
 package GreedyTimes;
 
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
+=======
+package GreedyTimes;
+
+>>>>>>> origin/main
 import java.util.Scanner;
 
 public class Main {
@@ -13,18 +18,26 @@ public class Main {
         long bagCapacity = Long.parseLong(scanner.nextLine());
         String[] safe = scanner.nextLine().split("\\s+");
 
+<<<<<<< HEAD
         //var bag = new LinkedHashMap<String, LinkedHashMap<String, Long>>();
         Bag bag = new Bag(bagCapacity);
 
         /*long gold = 0;
         long stones = 0;
         long money = 0;*/
+=======
+        Bag bag = new Bag(bagCapacity);
+        // Bag -> capacity, List<Item> items
+        // Item -> name, amount, ItemType
+        // enum ItemType
+>>>>>>> origin/main
 
         for (int i = 0; i < safe.length; i += 2) {
             String name = safe[i];
             long amount = Long.parseLong(safe[i + 1]);
 
             ItemType itemType = getType(name);
+<<<<<<< HEAD
             Item item = new Item(itemType, name, amount);
            /* String itemType = "";
 
@@ -110,6 +123,15 @@ public class Main {
             x.getValue().entrySet().stream().sorted((e1, e2) -> e2.getKey().compareTo(e1.getKey())).forEach(i -> System.out.println("##" + i.getKey() + " - " + i.getValue()));
 
         }*/
+=======
+
+            Item item = new Item(itemType, name, amount);
+
+            bag.put(item);
+        }
+
+        bag.printItems();
+>>>>>>> origin/main
     }
 
     private static ItemType getType(String name) {
@@ -123,4 +145,8 @@ public class Main {
         }
         return itemType;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
