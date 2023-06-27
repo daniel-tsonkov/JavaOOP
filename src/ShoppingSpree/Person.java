@@ -1,5 +1,6 @@
 package ShoppingSpree;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Person {
@@ -7,14 +8,14 @@ public class Person {
     private double money;
     private List<Product> products;
 
-    public Person(String name, double money, List<Product> products) {
+    public Person(String name, double money) {
         this.setName(name);
         this.setMoney(money);
-        this.products = products;
+        this.products = new ArrayList<>();
     }
 
     private void setName(String name) {
-        if (!name.trim().isBlank()) {
+        if (!name.trim().isEmpty()) {
             this.name = name;
         } else {
             throw new IllegalArgumentException("Name cannot be empty");
@@ -34,10 +35,11 @@ public class Person {
             throw new IllegalArgumentException(this.name + " can't afford " + product.getName());
         }*/
         if (this.money >= product.getCost()) {
+            System.out.printf("%s bought %s%n", this.name, product.getName());
             this.products.add(product);
             this.money -= product.getCost();
         } else {
-            String message = getName() + " can't afford " + product.getName();
+            String message = this.name + " can't afford " + product.getName();
             throw new IllegalArgumentException(message);
         }
     }
