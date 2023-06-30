@@ -1,7 +1,16 @@
 package Vehicle;
 
 public class Truck extends Vehicle {
+    private final static double ADDITIONAL_AC_CONSUMTION = 1.6;
+    private final static double REFUEL_PERCANTEG = 0.95;
     public Truck(double fuelQuantity, double fuelConsumption) {
         super(fuelQuantity, fuelConsumption);
+        this.fuelConsumption = this.fuelConsumption + ADDITIONAL_AC_CONSUMTION;
+    }
+
+    @Override
+    public void refuel(double liters) {
+        liters = liters * REFUEL_PERCANTEG;
+        this.fuelQuantity += liters;
     }
 }

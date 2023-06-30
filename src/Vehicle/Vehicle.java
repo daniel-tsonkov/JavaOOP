@@ -3,8 +3,8 @@ package Vehicle;
 import java.text.DecimalFormat;
 
 public class Vehicle {
-    private double fuelQuantity;
-    private double fuelConsumption;
+    protected double fuelQuantity;
+    protected double fuelConsumption;
 
     public Vehicle(double fuelQuantity, double fuelConsumption) {
         this.fuelQuantity = fuelQuantity;
