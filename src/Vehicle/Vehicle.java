@@ -15,7 +15,7 @@ public class Vehicle {
         double fuelNeeded = distance * this.fuelConsumption;
 
         if (fuelNeeded > this.fuelQuantity) {
-            return String.format("%s needs refueling", getClass().getSimpleName());
+            return String.format("%s needs refueling", this.getClass().getSimpleName());
         }
 
         this.fuelQuantity -= fuelNeeded;
@@ -42,5 +42,10 @@ public class Vehicle {
 
     public void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s: %.2f", getClass().getSimpleName(), this.fuelQuantity);
     }
 }

@@ -1,6 +1,7 @@
 package Vehicle;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -9,15 +10,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         String[] tokens = scanner.next().split("\\s+");
-        double carFuelQuantity = Double.parseDouble(tokens[1]);
-        double carFuelConsumption = Double.parseDouble(tokens[2]);
 
         Vehicle car = createVehicle(tokens);
 
         tokens = scanner.next().split("\\s+");
         Vehicle truck = createVehicle(tokens);
 
-        Map<String, Vehicle> vehicles = new HashMap<>();
+        Map<String, Vehicle> vehicles = new LinkedHashMap<>();
         vehicles.put("Car", car);
         vehicles.put("Truck", truck);
 
@@ -36,14 +35,11 @@ public class Main {
                     break;
                 case "Refuel":
                     double fuelAmount = Double.parseDouble(tokens[2]);
-                    if (vehicleType.equals("Car")) {
-                        car.refuel(fuelAmount);
-                    } else {
-                        truck.refuel(fuelAmount);
-                    }
+                    vehicles.get(vehicleType).refuel(fuelAmount);
                     break;
             }
         }
+        vehicles.values().forEach(System.out::println);
     }
 
     private static Vehicle createVehicle(String[] token) {
