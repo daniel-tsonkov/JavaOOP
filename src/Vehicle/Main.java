@@ -38,6 +38,7 @@ public class Main {
 
                     if (vehicle instanceof Bus) {
                         ((Bus) vehicle).setEmpty(false);
+                        ((Bus) vehicle).drive(distance, false);
                     }
                     String driveMessage = vehicle.drive(distance);
                     System.out.println(driveMessage);
@@ -48,7 +49,7 @@ public class Main {
                     break;
                 case "DriveEmpty":
                     double driveEmptyDistance = Double.parseDouble(tokens[2]);
-                    String driveEmptyMessage = bus.drive(driveEmptyDistance);
+                    String driveEmptyMessage = ((Bus) bus).drive(driveEmptyDistance, true);
                     System.out.println(driveEmptyMessage);
             }
         }
