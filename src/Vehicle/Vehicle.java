@@ -5,10 +5,12 @@ import java.text.DecimalFormat;
 public class Vehicle {
     protected double fuelQuantity;
     protected double fuelConsumption;
+    protected double tankCapacity;
 
-    public Vehicle(double fuelQuantity, double fuelConsumption) {
+    public Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         this.fuelQuantity = fuelQuantity;
         this.fuelConsumption = fuelConsumption;
+        this.tankCapacity = tankCapacity;
     }
 
     public String drive(double distance) {

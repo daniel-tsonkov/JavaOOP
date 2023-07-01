@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] tokens = scanner.next().split("\\s+");
+        String[] tokens = scanner.nextLine().split("\\s+");
 
         Vehicle car = createVehicle(tokens);
 
-        tokens = scanner.next().split("\\s+");
+        tokens = scanner.nextLine().split("\\s+");
         Vehicle truck = createVehicle(tokens);
 
         Map<String, Vehicle> vehicles = new LinkedHashMap<>();
@@ -46,14 +46,15 @@ public class Main {
         String vehicleType = token[0];
         double fuelQuantity = Double.parseDouble(token[1]);
         double fuelConsumption = Double.parseDouble(token[2]);
+        double tankCapacity = Double.parseDouble(token[3]);
         Vehicle vehicle = null;
 
         switch (vehicleType) {
             case "Car":
-                vehicle = new Car(fuelQuantity, fuelConsumption);
+                vehicle = new Car(fuelQuantity, fuelConsumption, tankCapacity);
             break;
             case "Truck":
-                vehicle = new Truck(fuelQuantity, fuelConsumption);
+                vehicle = new Truck(fuelQuantity, fuelConsumption, tankCapacity);
             break;
         }
         return vehicle;
