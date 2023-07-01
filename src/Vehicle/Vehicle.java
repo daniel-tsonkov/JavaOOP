@@ -46,6 +46,6 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return String.format("%s: %.2f", getClass().getSimpleName(), this.fuelQuantity);
+        return String.format("%s: %.2f", this.getClass().getSimpleName(), this.fuelQuantity);
     }
 }
