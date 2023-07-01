@@ -27,20 +27,18 @@ public class Vehicle {
     }
 
     public void refuel(double liters) {
+        if(liters <= 0) {
+            System.out.println("Fuel must be a positive number");
+            return;
+        }
         this.fuelQuantity += liters;
+
+        if(liters > this.tankCapacity - this.fuelQuantity) {
+            System.out.println("Cannot fit fuel in tank");
+            return;
+        }
     }
 
-    public double getFuelQuantity() {
-        return this.fuelQuantity;
-    }
-
-    public void setFuelQuantity(double fuelQuantity) {
-        this.fuelQuantity = fuelQuantity;
-    }
-
-    public double getFuelConsumption() {
-        return this.fuelConsumption;
-    }
 
     public void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
