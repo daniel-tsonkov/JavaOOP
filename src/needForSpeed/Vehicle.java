@@ -11,4 +11,36 @@ public class Vehicle {
         this.horsePower = horsePower;
         this.fuelConsumption = DEFAULT_FUEL_CONSUMPTION;
     }
+
+    public double getFuelConsumption() {
+        return this.fuelConsumption;
+    }
+
+    public void setFuelConsumption(double fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
+    }
+
+    public double getFuel() {
+        return this.fuel;
+    }
+
+    public void setFuel(double fuel) {
+        this.fuel = fuel;
+    }
+
+    public int getHorsePower() {
+        return this.horsePower;
+    }
+
+    public void setHorsePower(int horsePower) {
+        this.horsePower = horsePower;
+    }
+
+    public void drive(double kilometers) {
+        double remainingFuel = this.getFuel() - (kilometers * this.fuelConsumption);
+
+        if(remainingFuel >= 0) {
+            this.setFuel(remainingFuel);
+        }
+    }
 }
