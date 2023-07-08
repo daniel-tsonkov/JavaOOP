@@ -10,8 +10,12 @@ public class Animal {
         this.age = age;
         this.gender = gender;
     }
-
     public String produceSound() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s\n" + "%s %d %s\n" + "%s", this.getClass().getSimpleName(), this.name, this.age, this.gender, this.produceSound());
     }
 }
