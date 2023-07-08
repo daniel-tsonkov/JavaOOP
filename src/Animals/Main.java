@@ -28,7 +28,7 @@ public class Main {
                         break;
                     case "Kittens":
                         tokens = scanner.nextLine().split("\\s+");
-                        Kittens kittens = new Kittens(tokens[0], Integer.parseInt(tokens[1]));
+                        Kitten kittens = new Kitten(tokens[0], Integer.parseInt(tokens[1]));
                         System.out.println(kittens);
                         break;
                     case "Tomcat":
