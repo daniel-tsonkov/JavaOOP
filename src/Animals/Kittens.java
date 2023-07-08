@@ -1,8 +1,9 @@
 package Animals;
 
 public class Kittens extends Cat{
-    public Kittens(String name, int age, String gender) {
-        super(name, age, gender);
+    private static final String GENDER = "Female";
+    public Kittens(String name, int age) {
+        super(name, age, GENDER);
     }
 
     @Override

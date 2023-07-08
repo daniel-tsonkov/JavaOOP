@@ -1,8 +1,9 @@
 package Animals;
 
 public class Tomcat extends Cat{
-    public Tomcat(String name, int age, String gender) {
-        super(name, age, gender);
+    private static final String GENDER = "Male";
+    public Tomcat(String name, int age) {
+        super(name, age, GENDER);
     }
 
     @Override
