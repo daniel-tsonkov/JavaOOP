@@ -29,7 +29,6 @@ public class Main {
 
         String year = scanner.nextLine();
 
-//        livingBeings.stream().filter(livingBeing -> livingBeing.getBirthDate().endsWith(year)).map(Birthable::getBirthDate).forEach(System.out::println);
         livingBeings.stream().map(Birthable::getBirthDate).filter(birthDate -> birthDate.endsWith(year)).forEach(System.out::println);
 
         scanner.close();
