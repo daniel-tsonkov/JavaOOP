@@ -22,10 +22,10 @@ public class Smartphone implements Callable, Browsable {
             Matcher matcher = pattern.matcher(url);
 
             if(matcher.find()) {
-                sb.append("Invalid number!");
+                sb.append("Invalid URL!");
                 sb.append(System.lineSeparator());
             }else {
-                sb.append(String.format("Calling... %s\n", url));
+                sb.append(String.format("Browsing: %s!\n", url));
             }
 
         }
@@ -41,13 +41,29 @@ public class Smartphone implements Callable, Browsable {
             Matcher matcher = pattern.matcher(number);
 
             if(matcher.find()) {
-                sb.append("Invalid URL!");
+                sb.append("Invalid number!");
                 sb.append(System.lineSeparator());
             }else {
-                sb.append(String.format("Browsing: %s!\n", number));
+                sb.append(String.format("Calling... %s\n", number));
             }
 
         }
         return sb.toString();
+    }
+
+    public List<String> getNumbers() {
+        return this.numbers;
+    }
+
+    public void setNumbers(List<String> numbers) {
+        this.numbers = numbers;
+    }
+
+    public List<String> getUrls() {
+        return this.urls;
+    }
+
+    public void setUrls(List<String> urls) {
+        this.urls = urls;
     }
 }
