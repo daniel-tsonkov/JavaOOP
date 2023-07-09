@@ -14,9 +14,9 @@ public class Smartphone implements Callable, Browsable {
     }
 
     @Override
-    public String call() {
+    public String browse() {
         StringBuilder sb = new StringBuilder();
-        Pattern pattern = Pattern.compile("[\\D]");
+        Pattern pattern = Pattern.compile("[\\d]+");
 
         for(String url : urls) {
             Matcher matcher = pattern.matcher(url);
@@ -29,13 +29,13 @@ public class Smartphone implements Callable, Browsable {
             }
 
         }
-        return null;
+        return sb.toString();
     }
 
     @Override
-    public String browse() {
+    public String call() {
         StringBuilder sb = new StringBuilder();
-        Pattern pattern = Pattern.compile("[\\d]");
+        Pattern pattern = Pattern.compile("[\\D]+");
 
         for(String number : numbers) {
             Matcher matcher = pattern.matcher(number);
@@ -48,6 +48,6 @@ public class Smartphone implements Callable, Browsable {
             }
 
         }
-        return null;
+        return sb.toString();
     }
 }
