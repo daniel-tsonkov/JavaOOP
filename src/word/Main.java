@@ -8,7 +8,7 @@ public class Main {
 
         StringBuilder text = new StringBuilder(scanner.nextLine());
 
-        CommandInterface commandInterface = Initialization.buildCommandInterface(text);
+       /* CommandInterface commandInterface = Initialization.buildCommandInterface(text);
 
         String inputLine = scanner.nextLine();
 
@@ -17,6 +17,6 @@ public class Main {
             inputLine = scanner.nextLine();
         }
 
-        System.out.println(text);
+        System.out.println(text);*/
     }
 }
