@@ -5,14 +5,20 @@ import java.text.DecimalFormat;
 public abstract class VehicleImpl implements Vehicle {
     private double fuelQuantity;
     private double fuelConsumption;
+    private double tankCapacity;
 
-    public VehicleImpl(double fuelQuantity, double fuelConsumption) {
+    public VehicleImpl(double fuelQuantity, double fuelConsumption, double tankCapacity) {
         this.fuelQuantity = fuelQuantity;
         this.setFuelConsumption(fuelConsumption);
+        this.setTankCapacity(tankCapacity);
     }
 
     public void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
+    }
+
+    public void setTankCapacity(double tankCapacity) {
+        this.tankCapacity = tankCapacity;
     }
 
     @Override
@@ -31,6 +37,14 @@ public abstract class VehicleImpl implements Vehicle {
 
     @Override
     public void refuel(double liters) {
+        if(liters <= 0) {
+            throw new IllegalArgumentException("Fuel must be a positive number");
+        }
+        double newFUelQuantity = this.fuelQuantity + liters;
+
+        if(newFUelQuantity > tankCapacity) {
+            throw new IllegalArgumentException("Cannot fit fuel in tank");
+        }
         this.fuelQuantity += liters;
     }
 
