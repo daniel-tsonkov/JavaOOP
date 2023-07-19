@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import static java.lang.System.in;
 
@@ -62,6 +63,8 @@ public class DatingApp {
         System.out.print("Males left: ");
         if(!maleStack.isEmpty()) {
             System.out.println(maleStack.toString().replace("[", "").replace("]", ""));
+//            String result = maleStack.stream().map(String::valueOf).collect(Collectors.joining(", "));
+//            System.out.println(result);
         } else {
             System.out.println("none");
         }
