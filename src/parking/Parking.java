@@ -19,7 +19,6 @@ public class Parking {
     public void add(Car car) {
         if (this.capacity > this.data.size()) {
             this.data.add(car);
-            this.capacity--;
         }
     }
 
@@ -41,7 +40,7 @@ public class Parking {
 
     public String getStatistics() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("The cars are parked in %s: ", this.type));
+        sb.append(String.format("The cars are parked in %s:", this.type));
         this.data.forEach(car -> {
             sb.append(System.lineSeparator());
             sb.append(car.toString());
