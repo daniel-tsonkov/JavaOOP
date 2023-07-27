@@ -92,21 +92,17 @@ public class FormulaOne {
                 playerRow = prevPlayerRow;
                 playerCol = prevPlayerCol;
             } else if (matrix[playerRow][playerCol] == 'F') {
-                matrix[playerRow][playerCol] = 'P';
                 System.out.println("Well done, the player won first place!");
                 complete = true;
             }
         }
         if (!complete) {
-            matrix[playerRow][playerCol] = 'P';
             System.out.println("Oh no, the player got lost on the track!");
         }
+
+        matrix[playerRow][playerCol] = 'P';
         printMatrix(matrix);
     }
-
-    /*private static void movePlayer(int currentRow, int currentCol, char[][] matrix, String command) {
-
-    }*/
     private static void fillMatrix(Scanner scanner, int size, char[][] matrix) {
         for (int i = 0; i < size; i++) {
             String line = scanner.nextLine();
