@@ -24,8 +24,21 @@ public class RubberDuckDebuggers {
         while (!programmers.isEmpty() && !tasks.isEmpty()) {
             int programer = programmers.peek();
             int taask = tasks.peek();
+            int needTime = programer * taask;
 
-
+            if(needTime >= 0 && needTime <= 60) {
+                ducksMap.put("Darth Vader Ducky", ducksMap.get("Darth Vader Ducky") + 1);
+                programmers.poll();
+                tasks.pop();
+            } else  if(needTime >= 61 && needTime <= 120) {
+                ducksMap.put("Thor Ducky", ducksMap.get("Thor Ducky") + 1);
+                programmers.poll();
+                tasks.pop();
+            }  else  if(needTime >= 61 && needTime <= 120) {
+                ducksMap.put("Thor Ducky", ducksMap.get("Thor Ducky") + 1);
+                programmers.poll();
+                tasks.pop();
+            }
         }
     }
 }
