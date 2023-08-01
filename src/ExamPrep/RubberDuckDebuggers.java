@@ -13,7 +13,7 @@ public class RubberDuckDebuggers {
 
         ducksMap.put("Darth Vader Ducky", 0);
         ducksMap.put("Thor Ducky", 0);
-        ducksMap.put("Big blue Rubber Ducky", 0);
+        ducksMap.put("Big Blue Rubber Ducky", 0);
         ducksMap.put("Small Yellow Rubber Ducky", 0);
 
         ArrayDeque<Integer> programmers = new ArrayDeque<>();
@@ -34,11 +34,23 @@ public class RubberDuckDebuggers {
                 ducksMap.put("Thor Ducky", ducksMap.get("Thor Ducky") + 1);
                 programmers.poll();
                 tasks.pop();
-            }  else  if(needTime >= 61 && needTime <= 120) {
-                ducksMap.put("Thor Ducky", ducksMap.get("Thor Ducky") + 1);
+            }  else  if(needTime >= 121 && needTime <= 180) {
+                ducksMap.put("Big Blue Rubber Ducky", ducksMap.get("Big Blue Rubber Ducky") + 1);
                 programmers.poll();
                 tasks.pop();
+            }else  if(needTime >= 181 && needTime <= 240) {
+                ducksMap.put("Small Yellow Rubber Ducky", ducksMap.get("Small Yellow Rubber Ducky") + 1);
+                programmers.poll();
+                tasks.pop();
+            } else {
+                programmers.offerLast(programmers.poll());
+                tasks.push(tasks.pop() - 2);
             }
+        }
+
+        System.out.println("Congratulations, all tasks have been completed! Rubber ducks rewarded: ");
+        for (Map.Entry<String, Integer> duckEntry : ducksMap.entrySet()) {
+            System.out.println(duckEntry.getKey() + ": " + duckEntry.getValue());
         }
     }
 }
