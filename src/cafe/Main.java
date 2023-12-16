@@ -3,7 +3,7 @@ package cafe;
 public class Main {
 
     public static void main(String[] args) {
-        ///Initialize the repository
+        ///Initialize the repository..
         Cafe cafe = new Cafe("Costa", 15);
         //Initialize entity
         Employee employee = new Employee("Alexander", 30, "Bulgaria");

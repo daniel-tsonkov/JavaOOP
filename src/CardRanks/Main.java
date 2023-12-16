@@ -2,6 +2,7 @@ package CardRanks;
 
 public class Main {
     public static void main(String[] args) {
+        //asd
         CardRanksA[] cardRanks = CardRanksA.values();
 
         System.out.println("Card Ranks:");
